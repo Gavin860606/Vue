@@ -1,0 +1,153 @@
+<template>
+  <div class="small">
+    <h2 class="title">Revenue</h2>
+    <canvas id="RevenueChart" width="600px" height="350px"></canvas>
+  </div>
+</template>
+<script>
+import Chart from 'chart.js';
+
+export default {
+  components: {},
+  data() {
+    return {
+      dotChart: [],
+    };
+  },
+  props: {
+    RevenueData: Object,
+  },
+  mounted() {
+    var ctx2 = document.getElementById('RevenueChart');
+    var RevenueChart = new Chart(ctx2, {
+      type: 'line',
+      plugins: [
+        {
+          dot() {
+            Chart.ChartData.datasets[0].borderDash = [5, 10];
+          },
+        },
+      ],
+      data: {
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+        datasets: [
+          {
+            label: '2020',
+            yAxisID: '2020',
+            backgroundColor: 'rgba(63,127,191,0.3)',
+            borderColor: 'rgba(63,127,191,1)',
+            lineTension: 0,
+            borderWidth: 3,
+            data: this.RevenueData.thisYear,
+            spanGaps: 'false',
+            fill: 'false',
+          },
+          {
+            label: '2019',
+            backgroundColor: 'rgba(225,10,10,0.3)',
+            borderColor: 'rgba(225,103,110,1)',
+            lineTension: 0,
+            borderWidth: 1,
+            data: this.RevenueData.lastYear,
+            spanGaps: 'false',
+            fill: 'false',
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              id: '2020',
+              type: 'linear',
+              ticks: {
+                max: 40000,
+                min: 10000,
+              },
+            },
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+        },
+      },
+    });
+    var options = {
+    tooltips: {
+        enabled: false
+    },
+    scales: {
+          yAxes: [
+            {
+              id: '2020',
+              type: 'linear',
+              ticks: {
+                max: 40000,
+                min: 10000,
+              },
+            },
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+        },
+    plugins: {
+        datalabels: {
+            formatter: (value, ctx) => {
+                let sum = 0;
+                let dataArr = ctx.chart.data.datasets[0].data;
+                dataArr.map(data => {
+                    sum += data;
+                });
+                let percentage = (value*100 / sum).toFixed(2)+"%";
+                return percentage;
+            },
+            color: '#fff',
+        }
+    }
+};
+  },
+  methods: {
+    estimateThisYear() {
+      for (let i = this.RevenueData.thisYear.length - 1; i < 12; i++) {
+        this.RevenueData.thisYear[i] = Math.round(this.RevenueData.lastYear[i] * 1.1);
+      }
+      console.log('this', this.RevenueData.thisYear);
+    },
+  },
+  created() {
+    this.estimateThisYear();
+  },
+};
+</script>
+<style>
+.small {
+  padding: 5px;
+  max-width: 750px;
+  border: 1px solid;
+}
+.title {
+  text-align: left;
+}
+</style>
