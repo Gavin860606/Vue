@@ -21,5 +21,6 @@ module.exports = {
     'vars-on-top': 'off',
     'no-underscore-dangle': 'off',
     'prefer-destructuring': 'off',
+    'arrow-parens': 'off',
   },
 };

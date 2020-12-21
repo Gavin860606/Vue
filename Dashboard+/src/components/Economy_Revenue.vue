@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     sum() {
-      this.RevenueData.thisYear.forEach((element) => {
+      this.RevenueData.thisYear.forEach(element => {
         this.Sum += element;
       });
       console.log(this.Sum);

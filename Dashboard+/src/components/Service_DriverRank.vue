@@ -1,31 +1,33 @@
 <template>
   <div class="DriverRank">
     <div id="RankTitle">Top 3 Drivers</div>
-    <div id="DriverIcon">
-      <div id="Driver0">
-        <img id="CrownIcon" src="../assets/Gold.png" />
-        <img id="DriverPNG" src="../assets/Driver0.png" />
+    <div class="container ">
+      <div id="DriverIcon" class="d-flex justify-content-center">
+        <div id="Driver0">
+          <img id="CrownIcon" src="../assets/Gold.png" />
+          <img id="DriverPNG" src="../assets/Driver0.png" />
+        </div>
+        <div id="Driver1">
+          <img id="CrownIcon" src="../assets/Silver.png" />
+          <img id="DriverPNG" src="../assets/Driver1.png" />
+        </div>
+        <div id="Driver2">
+          <img id="CrownIcon" src="../assets/Bronze.png" />
+          <img id="DriverPNG" src="../assets/Driver2.png" />
+        </div>
       </div>
-      <div id="Driver1">
-        <img id="CrownIcon" src="../assets/Silver.png" />
-        <img id="DriverPNG" src="../assets/Driver1.png" />
-      </div>
-      <div id="Driver2">
-        <img id="CrownIcon" src="../assets/Bronze.png" />
-        <img id="DriverPNG" src="../assets/Driver2.png" />
-      </div>
-    </div>
-    <div class="DriverRank_ul">
-      <div id="DriverVfor" v-for="(item, index) in this.DriverRank" :key="index">
-        <div id="DriverName">{{ item.driverName }}</div>
-        <br />
-        <div id="vehicleId">{{ item.vehicleId }}</div>
-        <br />
-        <div id="Rank">{{ (item.safety + item.eco) / 2 }}</div>
-        <br />
-        <div style="word-spacing: 15px;">Safety ECO</div>
-        <div id="SafetyEco">{{ item.safety }} {{ item.eco }}</div>
-        <br />
+      <div class="DriverRank_ul d-flex justify-content-center">
+        <div id="DriverVfor" v-for="(item, index) in this.DriverRank" :key="index">
+          <div id="DriverName">{{ item.driverName }}</div>
+          <br />
+          <div id="vehicleId">{{ item.vehicleId }}</div>
+          <br />
+          <div id="Rank">{{ (item.safety + item.eco) / 2 }}</div>
+          <br />
+          <div style="word-spacing: 15px;">Safety ECO</div>
+          <div id="SafetyEco">{{ item.safety }} {{ item.eco }}</div>
+          <br />
+        </div>
       </div>
     </div>
   </div>
@@ -43,7 +45,7 @@ export default {
   },
   methods: {
     top3() {
-      this.DriverRank.forEach((element) => {
+      this.DriverRank.forEach(element => {
         this.Top3Result.push((element.safety + element.eco) / 2);
       });
     },
@@ -105,7 +107,7 @@ export default {
 }
 #CrownIcon {
   left: 114px;
-  bottom: 80px;
+  bottom: 52px;
   position: relative;
 }
 #DriverVfor {

@@ -106,17 +106,17 @@ export default {
   },
   methods: {
     route() {
-      this.chartdata.forEach((element) => {
+      this.chartdata.forEach(element => {
         this.routeArray.push(element.route);
       });
     },
     dispatch() {
-      this.chartdata.forEach((element) => {
+      this.chartdata.forEach(element => {
         this.dispatchArray.push(element.DispatchFrequencies);
       });
     },
     passengers() {
-      this.chartdata.forEach((element) => {
+      this.chartdata.forEach(element => {
         this.passengersArray.push(element.passengers);
       });
     },
@@ -132,10 +132,10 @@ export default {
 .title {
   text-align: left;
 }
-.ServiceAbnormal {
+/* .ServiceAbnormal {
   position: relative;
   bottom: 200px;
-}
+} */
 #myChart2 {
   width: 900px !important;
   height: 350px !important;

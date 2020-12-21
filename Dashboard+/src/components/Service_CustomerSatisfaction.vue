@@ -4,16 +4,19 @@
     <div class="chart-container" style="position: relative; height:90px; width: 250px;">
       <canvas id="myChart"></canvas>
     </div>
-    <div class="row mt-0">
+    <div class="row d-flex justify-content-center">
       <span class="threemonth" v-for="(item, index) in ThreeMonth" :key="index">{{ item }} </span>
     </div>
-    <div id="month">
-      <p>last 2<br />month</p>
-      <p>last<br />month</p>
-      <p>this<br />month</p>
+    <div class="row  d-flex justify-content-center">
+      <div id="month">
+        <p>last 2<br />month</p>
+        <p>last<br />month</p>
+        <p>this<br />month</p>
+      </div>
     </div>
-    <div class="row mt-0">
-      <img id="Warning" src="../assets/Warning.png" />
+
+    <div class="row  d-flex justify-content-center position-relative">
+      <img class="img-fluid" id="Warning" src="../assets/Warning.png" />
       <div id="Satisfaction_top3" v-for="(item, index) in Top3Result" :key="index">{{ item }}</div>
     </div>
   </div>
@@ -33,12 +36,12 @@ export default {
   },
   methods: {
     ThreeMonths() {
-      this.Satisfaction.Last3Month.forEach((element) => {
+      this.Satisfaction.Last3Month.forEach(element => {
         this.ThreeMonth.push(element);
       });
     },
     top3() {
-      this.Satisfaction.worse3Route.forEach((element) => {
+      this.Satisfaction.worse3Route.forEach(element => {
         this.Top3Result.push(element);
       });
     },
@@ -117,12 +120,10 @@ export default {
   margin-left: auto;
 }
 .CustomerSatisfaction {
-  height: auto;
-  width: 400px;
-  padding: 10px;
-  display: block;
-  border: solid 2px;
-  bottom: 200px;
+  height: 100%;
+  padding: 20px 20px;
+  /* border: solid 2px; */
+  background-color: #11303e;
 }
 #Satisfaction_top3 {
   font-size: 28px;
@@ -132,6 +133,13 @@ export default {
   padding: 5px 15px;
   margin: 10px;
   display: inline-block;
+}
+img#Warning {
+  width: 35px;
+  height: 35px;
+  top: 18px;
+  left: 20px;
+  position: absolute;
 }
 #month {
   display: inline-flex;

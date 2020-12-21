@@ -1,16 +1,32 @@
 <template>
   <div class="ServiceContainer">
     <!-- <Com0></Com0> -->
-    <SafetyEco class="safetyeco" v-bind:data="SafetyEco"></SafetyEco>
-    <br />
-    <AbnormalTop3 class="AbnormalTop3" v-bind:AbnormalTop3="abnormalTop3"></AbnormalTop3>
-    <br />
-    <AbnormalChart class="AbnormalChart" v-bind:chartdata="abnormalTop3"></AbnormalChart>
-    <CustomerSatisfaction
-      class="CustomerSatisfactionclass"
-      v-bind:Satisfaction="Satisfaction"
-    ></CustomerSatisfaction>
-    <DriverRank class="DriverRank" v-bind:DriverRank="DriverRank"></DriverRank>
+    <div class="container-fluid p-5">
+      <div class="row">
+        <div class="col-lg-3">
+          <CustomerSatisfaction
+            class="CustomerSatisfactionclass"
+            v-bind:Satisfaction="Satisfaction"
+          ></CustomerSatisfaction>
+        </div>
+
+        <div class="col-lg-7">
+          <DriverRank class="DriverRank" v-bind:DriverRank="DriverRank"></DriverRank>
+        </div>
+
+        <div class="col-lg-2">
+          <SafetyEco class="safetyeco" v-bind:data="SafetyEco"></SafetyEco>
+        </div>
+      </div>
+      <div class="row mt-4 ">
+        <div class="col-lg-8 pr-0">
+          <AbnormalChart class="AbnormalChart" v-bind:chartdata="abnormalTop3"></AbnormalChart>
+        </div>
+        <div class="col-lg-4 pl-0">
+          <AbnormalTop3 class="AbnormalTop3" v-bind:AbnormalTop3="abnormalTop3"></AbnormalTop3>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -172,20 +188,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  // border: 1px solid #ddd;
+}
 .safetyeco {
-  border: solid 2px;
-  max-width: 250px;
-  position: relative;
-  left: 1250px;
-  top: 20px;
+  // border: solid 2px;
+  height: 100%;
+  padding: 30px 10px;
+  background-color: #11303e;
 }
 .AbnormalTop3 {
-  border: solid 2px;
-  width: 500px;
-  height: auto;
-  position: relative;
-  top: 40px;
-  left: 950px;
+  height: 100%;
+  background-color: #11303e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ServiceContainer {
   color: #fcfcfc;
@@ -193,21 +210,14 @@ export default {
 .home {
   width: 100vw;
 }
-.CustomerSatisfactionclass {
-  right: auto;
-  bottom: 1000px;
-  left: 50px;
-  position: relative;
+.AbnormalChart {
+  padding: 30px 50px;
+  background-color: #11303e;
 }
-
 .DriverRank {
-  position: relative;
-  left: 500px;
-  top: auto;
-  bottom: 1400px;
-  width: 700px;
-  height: 400px;
-  border: solid;
+  // border: solid;
+  padding: 30px 20px;
+  background-color: #11303e;
 }
 .busStopBg {
   position: fixed;

@@ -41,7 +41,7 @@ export default {
       console.log(min);
       for (let x = 0; x < 3; x++) {
         if (top3.length === 3) break;
-        this.AbnormalTop3.findIndex((element) => {
+        this.AbnormalTop3.findIndex(element => {
           if (element.passengers / element.DispatchFrequencies === min[x]) top3.push(element);
         });
       }
