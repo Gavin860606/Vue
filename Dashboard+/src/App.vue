@@ -19,7 +19,7 @@
 }
 
 #nav {
-  padding: 20px;
+  padding: 0px;
   a {
     font-weight: bold;
     color: #127be4;

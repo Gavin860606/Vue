@@ -60,7 +60,8 @@ export default {
             borderColor: 'rgba(244, 33, 170,1)',
             borderWidth: 3,
             pointStrokeColor: '#fff',
-            pointStyle: 'crossRot',
+            pointStyle: 'cross',
+            pointBackgroundColor: 'rgba(244, 33, 170)',
             data: this.ThreeMonth,
             cubicInterpolationMode: 'monotone',
             fill: 'false',
@@ -111,6 +112,7 @@ export default {
 <style>
 #Satisfaction_title {
   font-size: 25px;
+  margin-top: 50px;
 }
 .chart-container {
   display: inline-block;
@@ -121,25 +123,25 @@ export default {
 }
 .CustomerSatisfaction {
   height: 100%;
-  padding: 20px 20px;
+  padding: 10px 10px;
   /* border: solid 2px; */
   background-color: #11303e;
 }
 #Satisfaction_top3 {
-  font-size: 28px;
+  font-size: 20px;
   border: solid 1px;
   font-weight: bold;
   border-radius: 5px;
-  padding: 5px 15px;
+  padding: 1px 12px;
   margin: 10px;
   display: inline-block;
 }
 img#Warning {
   width: 35px;
   height: 35px;
-  top: 18px;
-  left: 20px;
-  position: absolute;
+  position:relative;
+  margin-top: 10px;
+  margin-right:10px;
 }
 #month {
   display: inline-flex;

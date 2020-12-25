@@ -1,6 +1,6 @@
 <template>
   <div id="RevenueDoughnut">
-    <h2 class="title">Revenue</h2>
+    <h4 class="Doughnut_title">This Year</h4>
 
     <div id="RevenuePercentChart" style="position: relative; height:150px; width: 250px;">
       <canvas id="Revenue"></canvas>
@@ -106,19 +106,21 @@ export default {
 <style>
 #RevenueDoughnut {
   padding: 5px;
-  border: 1px solid;
   position: relative;
 }
 #RevenuePercentChart {
   margin: auto;
-  border: solid 1px;
+
+}
+.Doughnut_title{
+  padding-top: 10px;
 }
 #RevenuePercentage {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
   position: absolute;
-  top: 30px;
+  top: 50px;
   left: 93px;
 }
 #Revenue_ThisMonth {

@@ -10,7 +10,7 @@
           ></CustomerSatisfaction>
         </div>
 
-        <div class="col-lg-7">
+        <div class="col-lg-7 ">
           <DriverRank class="DriverRank" v-bind:DriverRank="DriverRank"></DriverRank>
         </div>
 
@@ -188,9 +188,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* {
-  // border: 1px solid #ddd;
-}
+
 .safetyeco {
   // border: solid 2px;
   height: 100%;
@@ -203,14 +201,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 50px;
 }
 .ServiceContainer {
   color: #fcfcfc;
+  height: 1000px;
 }
 .home {
   width: 100vw;
 }
 .AbnormalChart {
+  position: relative;
   padding: 30px 50px;
   background-color: #11303e;
 }

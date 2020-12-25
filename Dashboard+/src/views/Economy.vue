@@ -1,17 +1,33 @@
 <template>
+<div class="container-fluid p-5">
   <div class="Economy">
     <!-- <Com0></Com0> -->
-    <div class="RevenueView">
-      <RevenueChart id="RevenueChartCom" v-bind:RevenueData="RevenueData"></RevenueChart>
-      <Revenue id="RevenueCom" v-bind:RevenueData="RevenueData"></Revenue>
+<div class="row">
+  <div class="col-lg-9">
+    <div class="row">
+        <div class="col-lg-10">
+        <RevenueChart id="RevenueChartCom" v-bind:RevenueData="RevenueData"></RevenueChart>
+        </div>
+        <div class="col-lg-2">
+        <Revenue id="RevenueCom" v-bind:RevenueData="RevenueData"></Revenue>
+        </div>
     </div>
-    <div class="FuelView">
-      <FuelChart id="FuelChartCom" v-bind:FuelData="FuelData"></FuelChart>
-      <Fuel id="FuelCom" v-bind:FuelData="FuelData"></Fuel>
-    </div>
-    <div class="CostView">
-      <Cost v-bind:repair="repair" v-bind:fine="fine"></Cost>
-    </div>
+    <div class="row mt-4">
+        <div class="col-lg-10">
+        <FuelChart id="FuelChartCom" v-bind:FuelData="FuelData"></FuelChart>
+        </div>
+        <div class="col-lg-2 ">
+        <Fuel id="FuelCom" v-bind:FuelData="FuelData"></Fuel>
+         </div>
+      </div>
+</div>
+  <div class="col-lg-3">
+        <div class="CostView">
+          <Cost v-bind:repair="repair" v-bind:fine="fine"></Cost>
+        </div>
+        </div>
+  </div>
+  </div>
   </div>
 </template>
 
@@ -73,44 +89,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 #RevenueCom {
   width: 300px;
-  border: solid 1px;
-  position: relative;
-  left: 800px;
-  background-color: #1b3b49;
+  background-color: #11303e;
   color: #fcfcfc;
 }
 #RevenueChartCom {
-  position: absolute;
-  width: 720px;
-  background-color: #314e5b;
-  color: #fcfcfc;
+  position: relative;;
+  background-color:#2a4452;
+  padding-right: 50px;
 }
-.RevenueView {
-  position: relative;
-}
-.FuelView {
-  position: relative;
-  margin-top: 30px;
-}
+
 .CostView {
   position: relative;
-  left: 1200px;
-  bottom: 900px;
 }
 #FuelCom {
   width: 300px;
-  border: solid 1px;
-  position: relative;
-  left: 800px;
-  background-color: #1b3b49;
+ background-color: #11303e;
   color: #fcfcfc;
 }
 #FuelChartCom {
-  position: absolute;
-  width: 720px;
-  background-color: #314e5b;
-  color: #fcfcfc;
+  position: relative;
+  background-color: #2a4452;
+  padding-right: 50px;
 }
+
 </style>

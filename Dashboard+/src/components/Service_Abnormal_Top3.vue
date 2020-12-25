@@ -3,7 +3,7 @@
     <h3>
       Top3 <br />Abnormal Dispatch Routes <br /><br />
       <img id="Warning_ABtop3" src="../assets/Warning.png" />
-      <span id="top3" v-for="(item, index) in Top3Result" :key="index">{{ item.route }} </span>
+      <span id="top3" v-for="(item, index) in Top3Result" :key="index">{{ item.route }}</span>
     </h3>
   </div>
 </template>
@@ -57,8 +57,9 @@ export default {
 #top3 {
   border: solid 1px;
   border-radius: 5px;
-  padding: 1px 2px;
   margin-right: 10px;
+  margin-left: 10px;
+  padding: 5px;
 }
 #Warning_ABtop3 {
   margin-right: 15px;

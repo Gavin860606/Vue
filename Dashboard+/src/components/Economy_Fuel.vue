@@ -1,6 +1,6 @@
 <template>
   <div id="FuelDoughnut">
-    <h2 class="title">Fuel</h2>
+    <h4 class="Doughnut_title">This Year</h4>
     <div id="FuelPercentChart" style="position: relative; height:150px; width: 250px;">
       <canvas id="Fuel"></canvas>
       <p id="FuelPercentage">{{ percentage }}%</p>
@@ -104,19 +104,19 @@ export default {
 #FuelDoughnut {
   width: auto;
   padding: 5px;
-  border: 1px solid;
+
   position: relative;
 }
 #FuelPercentChart {
   margin: auto;
-  border: solid 1px;
+
 }
 #FuelPercentage {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
   position: absolute;
-  top: 30px;
+  top: 50px;
   left: 93px;
 }
 #Fuel_ThisMonth {

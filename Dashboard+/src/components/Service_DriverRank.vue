@@ -109,6 +109,7 @@ export default {
   left: 114px;
   bottom: 52px;
   position: relative;
+  margin-bottom: 10px;
 }
 #DriverVfor {
   margin-left: 30px;

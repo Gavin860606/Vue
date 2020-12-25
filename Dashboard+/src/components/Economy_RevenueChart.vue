@@ -1,8 +1,8 @@
 <template>
   <div class="small">
     <h2 class="title">Revenue</h2>
-    <div id="RevenueChartid" style="position: relative; height:340px; width: 700px;">
-      <canvas id="RevenueChart"></canvas>
+    <div id="RevenueChartid" >
+      <canvas id="RevenueChart" style="position: relative; width: 1000px; height: 340px;"></canvas>
     </div>
   </div>
 </template>
@@ -170,10 +170,16 @@ export default {
 <style>
 .small {
   padding: 5px;
-  max-width: 750px;
   border: 1px solid;
 }
 .title {
   text-align: left;
+}
+#RevenueChartid {
+
+  padding-left:20px
+}
+.title{
+  color: #fcfcfc;
 }
 </style>

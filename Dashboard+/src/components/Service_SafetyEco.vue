@@ -25,4 +25,11 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+#Heart{
+  margin-bottom:10px;
+}
+#Leaf{
+  margin-bottom: 10px;
+}
+</style>

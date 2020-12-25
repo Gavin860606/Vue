@@ -10,13 +10,13 @@
       <p id="RepairCost">$ {{ RepairCost }}</p>
       <img
         v-if="this.repair.isGoingUp === true"
-        id="Eco_Cost_up"
+        id="Eco_Cost_img"
         src="../assets/UPArrow.png"
         style="border : solid 1px padding-left:10px"
       />
       <img
         v-if="this.repair.isGoingUp === false"
-        id="Eco_Cost_down"
+        id="Eco_Cost_img"
         src="../assets/DownArrow.png"
         style="border : solid 1px padding-left:10px"
       />
@@ -28,13 +28,13 @@
       <p id="Fine">$ {{ Fine }}</p>
       <img
         v-if="this.fine.isGoingUp === true"
-        id="Eco_Cost_up"
+        id="Eco_Fine_img"
         src="../assets/UPArrow.png"
         style="border : solid 1px padding-left:10px"
       />
       <img
         v-if="this.fine.isGoingUp === false"
-        id="Eco_Cost_down"
+        id="Eco_Fine_img"
         src="../assets/DownArrow.png"
         style="border : solid 1px padding-left:10px"
       />
@@ -65,11 +65,12 @@ export default {
 </script>
 <style>
 .Economy_Cost {
-  border: solid 1px;
-  width: 300px;
-  height: 950px;
-  background-color: #314e5b;
+  width: 320px;
+  height: 845px;
+  background-color: #2a4452;
   color: #fcfcfc;
+  padding-top: 70px;
+  margin-left: 105px;
 }
 #Fine {
   font-size: 36px;
@@ -82,12 +83,17 @@ export default {
 #Eco_Cost_up {
   position: relative;
   left: 100px;
-  bottom: 82px;
+  bottom: 68px;
 }
-#Eco_Cost_down {
+#Eco_Cost_img {
   position: relative;
   left: 100px;
-  bottom: 82px;
+  bottom: 68px;
+}
+#Eco_Fine_img {
+  position: relative;
+  left: 100px;
+  bottom: 62px;
 }
 #CostRepair {
   position: relative;

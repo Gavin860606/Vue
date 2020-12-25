@@ -1,8 +1,8 @@
 <template>
   <div class="ServiceAbnormal">
     <h2 class="title">Abnormal dispatch</h2>
-    <div id="Service_AbnormalChart" style="position: relative; width: 900px; height: 350px; ">
-      <canvas id="myChart2"></canvas>
+    <div id="Service_AbnormalChart" >
+      <canvas id="myChart2" style="position: relative; width: 950px; height: 280px;"></canvas>
     </div>
   </div>
 </template>
@@ -31,10 +31,10 @@ export default {
           {
             label: 'Dispatch frequencies',
             yAxisID: 'Dispatch frequencies',
-            backgroundColor: 'rgba(0, 204, 204, 0.3)',
-            borderColor: 'rgba(0, 204, 204, 1)',
+            backgroundColor: 'rgba(0, 204, 204, 1)',
+            borderColor: 'rgba(0, 204, 204, 0.7)',
             lineTension: 0,
-            borderWidth: 3,
+            borderWidth: 4,
             pointStrokeColor: '#fff',
             pointStyle: 'circle',
             data: this.dispatchArray,
@@ -45,11 +45,8 @@ export default {
           {
             label: 'passengers',
             yAxisID: 'passengers',
-            backgroundColor: 'rgba(10, 108, 202,0.3)',
-            borderColor: 'rgba(10, 108, 202,1)',
-            borderWidth: 1,
-            pointStrokeColor: '#fff',
-            pointStyle: 'circle',
+            backgroundColor: 'rgba(10, 108, 202,1)',
+            borderColor: 'rgba(10, 108, 202,0.3)',
             data: this.passengersArray,
             spanGaps: 'false',
             fill: 'false',
@@ -90,7 +87,7 @@ export default {
           ],
           xAxes: [
             {
-              barPercentage: 0.5,
+              barPercentage: 0.4,
               gridLines: {
                 display: false,
               },
@@ -136,8 +133,4 @@ export default {
   position: relative;
   bottom: 200px;
 } */
-#myChart2 {
-  width: 900px !important;
-  height: 350px !important;
-}
 </style>

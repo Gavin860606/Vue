@@ -1,8 +1,8 @@
 <template>
   <div class="small">
     <h2 class="title">Fuel Consumption</h2>
-    <div id="FuelChartid" style="position: relative; height:340px; width: 700px;">
-      <canvas id="FuelChart"></canvas>
+    <div id="FuelChartid" >
+      <canvas id="FuelChart" style="position: relative; width: 1000px; height: 340px;"></canvas>
     </div>
   </div>
 </template>
@@ -171,12 +171,12 @@ export default {
 };
 </script>
 <style>
-.small {
-  padding: 5px;
-  max-width: 750px;
-  border: 1px solid;
-}
 .title {
   text-align: left;
+}
+#FuelChartid {
+
+  padding-left:20px
+
 }
 </style>
